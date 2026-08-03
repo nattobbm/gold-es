@@ -22,3 +22,10 @@ Mean per-day z-score of the 10:15–10:30 bucket over 49 days: ES +0.74, MES +1.
 ## Why the commit history matters
 
 The point of this repo is the timeline: the specification is publicly frozen *before* the confirmatory data is examined. Commit timestamps are the notarization. The history will not be rewritten.
+
+## Independent timestamping
+
+Git commit dates are author-reported, so two independent attestations back the timeline:
+
+1. **GH Archive** — the 2026-07-23/24 public push events to this repository are permanently recorded by the third-party [GH Archive](https://www.gharchive.org/) project, independent of this repo's history.
+2. **OpenTimestamps** — on 2026-08-03 (before the confirmatory sample completes and before any confirmatory analysis), SHA256 hashes of the frozen files (`preregistration.md`, `analysis_frozen.py`, the exploratory CSVs via `MANIFEST_sha256_2026-08-03.txt`) were committed to the Bitcoin blockchain via [OpenTimestamps](https://opentimestamps.org/). The `.ots` proof files are in this repo; verify with `ots verify <file>.ots` (proofs will be upgraded to their final Bitcoin attestation once aggregated).

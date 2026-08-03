@@ -1,0 +1,16 @@
+# SHA256 manifest — gold-es preregistration integrity snapshot
+# Created 2026-08-03, stamped via OpenTimestamps the same day.
+# git HEAD at snapshot: 751620c79769d567838f3b0b14e565acc53e0abe
+# Frozen protocol commits: 3cb39cd (2026-07-23), 9a59771 (2026-07-23)
+
+bff1f3db1d8d956634a3fca544152e6f670314c6579c40550189bc354607093b *preregistration.md
+0e384e0184b34a60d7c6f6542295b449ef74c1e829ec516eeb902a29b6abfeef *analysis_frozen.py
+b372da3ef65debdff40be156f783a9b1bdd3a3627132d0c393358e80af605540 *ES_5m.csv
+d31025411ada9e7be001e097d5c39fe75128957b7fa9642cf34e721f54d9391b *MES_5m.csv
+eba6224e7f4f442c449557810cf5d9025aa3d453fce5a60baf1e0a0f6f52e653 *GC_5m.csv
+a64903ecb297c4069651682f9db0d840f0c1548387cb86b9eb28b296d6c1d979 *MGC_5m.csv
+869a5a504d21184ada8fbb01a6d2f826b0d62734e8b448b68d4164efa3a70f0e *ES_1m.csv
+1faeda7885582536e1cce09288a3e7bed06198d07863afceff0d2e01e5d5bd90 *MES_1m.csv
+212eee4f30ebbec70eb1c4f287783a1b43fea40e24a5bc0024d8e51a74127806 *GC_1m.csv
+cbfbbc9f0a606b2672a0e401ab3934424739c9d4d9999407fcd02a74409e1d00 *MGC_1m.csv
+20d10e19afbb664a9c997fcc56c59e4b203f202227cfee1f70fef96e9eaef126 *robustness_exploratory.md
