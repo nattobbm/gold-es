@@ -76,6 +76,25 @@ CME special days inside the sample window: 2026-05-25 (Memorial Day), 2026-06-19
 
 Means move by ≤0.03; all results remain significant. Holiday-adjacent liquidity conditions do not drive the effect.
 
+## 5. Statistical power of the frozen confirmatory test (added 2026-08-03, before scoring)
+
+*The preregistration did not state a power analysis (a gap relative to registered-reports convention). It is added here — computed only from exploratory effect sizes (data ≤ 2026-07-14), before any confirmatory data is unblinded, and it changes nothing in the frozen protocol.*
+
+Power of the frozen tests at n=30, assuming the exploratory effect sizes (Cohen's d = mean/SD of the daily z-series):
+
+| test | d (exploratory) | power at n=30 |
+|---|---|---|
+| H1 ES | 1.18 | >0.999 |
+| H1 MES | 1.59 | ≈1.000 |
+| H1 GC | 1.12 | >0.999 |
+| H1 MGC | 1.39 | ≈1.000 |
+| H2 MES−ES | 1.90 | ≈1.000 |
+| **H2 MGC−GC** | **0.37** | **0.51** |
+
+Minimum detectable effect at 80% power, n=30: d ≈ 0.59 (H1), d ≈ 0.53 (H2).
+
+**Interpretation committed in advance:** H1 and the equity leg of H2 are effectively guaranteed to pass *if* the exploratory effect sizes persist. The gold leg of H2 (MGC−GC, exploratory mean diff +0.17) is underpowered by design: even if the true effect equals the exploratory estimate, the frozen test fails ≈49% of the time. Therefore a "H2 not confirmed" outcome driven by the gold pair is consistent both with a smaller/absent effect and with insufficient power, and will be reported with this ambiguity stated — not reinterpreted after the fact. The frozen pass/fail criteria are unchanged.
+
 ---
 
 ## Conclusion
