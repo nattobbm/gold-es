@@ -23,17 +23,35 @@ Two caveats stated up front, not buried: all four H1 effects **attenuated** out 
 
 ## Repository contents
 
-- `preregistration.md` — frozen hypotheses (H1: 10:15–10:30 bucket volume z-score > 0 in all four contracts; H2: micro contracts show higher z than full-size, consistent with retail order-flow concentration), sample and exclusion rules, significance criteria, limitations, integrity statement.
-- `analysis_frozen.py` — the confirmatory test, frozen at preregistration. Not to be edited.
-- `*_1m.csv`, `*_5m.csv` — raw exploratory-sample data (yfinance continuous contracts, 1-minute and 5-minute bars). Confirmatory-sample archives are added by later commits, marked "archived, not analyzed."
+**The preregistration (frozen 2026-07-23, never edited)**
+- `preregistration.md` — frozen hypotheses, sample and exclusion rules, significance criteria, limitations, integrity statement.
+- `analysis_frozen.py` — the confirmatory test as frozen. Not edited; byte-identical to its 2026-07-23 version, and its SHA256 is attested in Bitcoin block 960824.
 
-## Exploratory findings (to be re-tested, not taken as proven)
+**The result**
+- `results.md` — full confirmatory report: verbatim script output, decisions against the preregistered criteria, exploratory-vs-confirmatory comparison, the marginal finding stated as marginal, protocol deviations, limitations, mechanism discussion.
+- `results_stdout_2026-08-30.txt` — raw stdout of the single frozen run.
+- `robustness_exploratory.md` — multiplicity correction (Bonferroni ×26 and ×104), split-half stability, weekday decomposition, holiday sensitivity, and the power analysis. All computed on exploratory data only, all committed before the confirmatory sample closed.
 
-Mean per-day z-score of the 10:15–10:30 bucket over 49 days: ES +0.74, MES +1.20, GC +1.07, MGC +1.24; z > 0 on 92–98% of days. Two candidate mechanisms falsified (10:00 ET data releases; Wednesday EIA). Minute-level profile shows twin peaks near 10:16 and 10:33; the mechanism is unresolved (surviving hypothesis: scheduled programmatic execution) and is explicitly out of scope for the confirmatory test.
+**Data**
+- `*_1m.csv`, `*_5m.csv` (repo root) — raw exploratory-sample data, 2026-05-04 → 2026-07-14.
+- `archive/pull_YYYY-MM-DD/` — dated raw pulls. Those dated on or before 2026-08-25 were made during the confirmatory period and were archived without being analyzed; later pulls are ordinary post-study collection.
+- `data/{SYM}.csv` — the exact inputs fed to the frozen script on 2026-08-30 (staged from `archive/pull_2026-08-30/`; column `time` renamed to `datetime`, nothing else changed).
+
+**Tooling** (`tools/`) — `weekly_archive.py` (scheduled data pulls), `sample_readiness_check.py` (bar-count-only completeness check), `stage_for_scoring.py` (file placement), `robustness_exploratory.py`, `power_analysis.py`, `confirmatory_descriptives.py`.
+
+**Timestamp proofs** — `*.ots`, `MANIFEST_sha256_2026-08-03.txt`. See *Independent timestamping* below.
+
+## Exploratory findings (superseded by the confirmatory test above)
+
+Mean per-day z-score of the 10:15–10:30 bucket over 49 days, 2026-05-04 → 2026-07-14: ES +0.74, MES +1.20, GC +1.07, MGC +1.24; z > 0 on 92–98% of days. Two candidate mechanisms falsified (10:00 ET data releases; Wednesday EIA). Minute-level profile shows twin peaks near 10:16 and 10:33.
+
+These figures were the *hypothesis-generating* sample and were never treated as proof. The confirmatory test has since been run: the effect persisted in all four contracts at a **smaller** magnitude (see the attenuation note above). The mechanism remains unresolved; the surviving hypothesis is scheduled programmatic execution, and separating it requires tick-level data.
 
 ## Why the commit history matters
 
-The point of this repo is the timeline: the specification is publicly frozen *before* the confirmatory data is examined. Commit timestamps are the notarization. The history will not be rewritten.
+The point of this repo is the timeline: the specification was publicly frozen **before** the confirmatory data existed, let alone was examined. That commitment is now discharged — the sample closed on 2026-08-25, the frozen script was run once on 2026-08-30, and the result was published as-is. The history has not been rewritten and will not be.
+
+The order of events is checkable by anyone: preregistration commit `9a59771` (2026-07-23) → blockchain attestation of its hash (2026-08-03) → dated archive commits through the confirmatory window → `results.md` (2026-08-30).
 
 ## Independent timestamping
 
