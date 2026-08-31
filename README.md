@@ -2,12 +2,24 @@
 
 A preregistered, fully reproducible study of a recurring intraday volume surge in the 10:15–10:30 ET window, observed across four CME futures contracts: ES, MES (E-mini / Micro E-mini S&P 500) and GC, MGC (Gold / Micro Gold).
 
-## Status: confirmatory waiting period
+## Status: complete — both hypotheses confirmed out of sample
 
-- **2026-07-14** — exploratory analysis completed (49 trading days, 2026-05-04 to 2026-07-14). The effect was found by visual inspection first, then tested; exploratory p-values therefore carry a selection effect over 26 intraday buckets, which is why they are not treated as confirmation.
+**See [`results.md`](results.md) for the full result, including the deviations and the weakest finding.**
+
+- **2026-07-14** — exploratory analysis completed (49 trading days, 2026-05-04 to 2026-07-14). The effect was found by visual inspection first, then tested; exploratory p-values therefore carry a selection effect over 26 intraday buckets, which is why they were not treated as confirmation.
 - **2026-07-23** — specification, analysis script, and raw data committed here, frozen. See `preregistration.md` for the exact hypotheses, sample definition, and decision rules.
-- **Now → ~2026-08-25** — confirmatory data (the first 30 qualifying trading days from 2026-07-15) accrues. Raw data is archived weekly **without being analyzed**.
-- **~2026-08-25** — `analysis_frozen.py` is run once on the confirmatory sample. The result — confirmed, partial, or falsified — will be published here as-is.
+- **2026-08-03** — SHA256 of the frozen files committed to the Bitcoin blockchain (see below). Robustness checks and a power analysis added, both using exploratory data only.
+- **2026-07-15 → 2026-08-25** — confirmatory sample accrued (30 qualifying trading days). Raw data archived without being analyzed.
+- **2026-08-30** — `analysis_frozen.py` run once, unmodified, after verifying it is byte-identical to the preregistered version and matches its blockchain-attested hash.
+
+### Result
+
+| hypothesis | outcome |
+|---|---|
+| **H1** — 10:15–10:30 ET bucket volume z > 0 in ES, MES, GC, MGC (Bonferroni ×4, all four must pass) | **CONFIRMED, 4/4** (mean z +0.64 / +1.12 / +0.76 / +0.97; p from 1.4×10⁻⁵ to 6.0×10⁻¹³) |
+| **H2** — micro-minus-full z difference > 0 for MES−ES and MGC−GC (Bonferroni ×2, both must pass) | **CONFIRMED, 2/2** (+0.485, p = 6.3×10⁻¹⁰; +0.211, p = 0.0121) |
+
+Two caveats stated up front, not buried: all four H1 effects **attenuated** out of sample (−6% for MES to −29% for GC), consistent with the declared selection effect in the exploratory phase. And **MGC−GC is marginal** — it clears its threshold by a factor of ~2 where the others clear theirs by 7–11 orders of magnitude, and a pre-committed power analysis put that specific test at only 51% power. It should be read as suggestive and re-tested, not as established. Mechanism remains unresolved.
 
 ## Repository contents
 

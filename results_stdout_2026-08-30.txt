@@ -1,0 +1,11 @@
+=== H1: 10:15-10:30 bucket z > 0, one-sided, alpha=0.0125 each ===
+ES: N=30 mean_z=+0.636 t=8.98 p(one-sided)=3.56e-10 -> PASS
+MES: N=30 mean_z=+1.121 t=11.86 p(one-sided)=6.01e-13 -> PASS
+GC: N=30 mean_z=+0.756 t=4.96 p(one-sided)=1.44e-05 -> PASS
+MGC: N=30 mean_z=+0.967 t=7.37 p(one-sided)=2.00e-08 -> PASS
+H1 overall: CONFIRMED (4/4 passed)
+
+=== H2: micro - full z difference > 0, one-sided, alpha=0.025 each ===
+MES-ES: N=30 mean_diff=+0.485 t=8.75 p(one-sided)=6.28e-10 -> PASS
+MGC-GC: N=30 mean_diff=+0.211 t=2.38 p(one-sided)=1.21e-02 -> PASS
+H2 overall: CONFIRMED (2/2 passed)
