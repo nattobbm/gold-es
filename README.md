@@ -53,6 +53,19 @@ The point of this repo is the timeline: the specification was publicly frozen **
 
 The order of events is checkable by anyone: preregistration commit `9a59771` (2026-07-23) → blockchain attestation of its hash (2026-08-03) → dated archive commits through the confirmatory window → `results.md` (2026-08-30).
 
+## License and citation
+
+**Use it freely. Just say where it came from.**
+
+- Code (`*.py`, `tools/`) — MIT.
+- Text, results and data (`preregistration.md`, `results.md`, `robustness_exploratory.md`, this README, the CSVs, `archive/`, `data/`) — [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/).
+
+Read, run, quote, teach from, extend, or build a product on this — commercially or not — with one condition that is not waived: **credit the author and link back to this repository.** Use GitHub's "Cite this repository" button, or `CITATION.cff`, or:
+
+> nattobbm (2026). *Intraday Volume Anomaly: the 10:15–10:30 ET Window in CME Futures — a preregistered study.* GitHub repository, https://github.com/nattobbm/gold-es. Preregistration commit `9a59771` (2026-07-23), hash-attested in Bitcoin block 960824 (2026-08-03).
+
+The only thing no license here grants is authorship: presenting this work, its specification, its results, or its data as your own is outside all of the above — and, unusually for a research repository, the priority claim does not rest on anyone's word. It is verifiable against a public blockchain by any third party, as described next. See [`LICENSE`](LICENSE) for the full terms.
+
 ## Independent timestamping
 
 Git commit dates are author-reported, so two independent attestations back the timeline:

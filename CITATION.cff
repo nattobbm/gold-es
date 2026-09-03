@@ -1,0 +1,47 @@
+cff-version: 1.2.0
+title: >-
+  Intraday Volume Anomaly: the 10:15-10:30 ET Window in CME Futures
+  - a preregistered study
+message: >-
+  If you use, quote, or build on this work, please cite it as below.
+  Attribution is the sole condition of the license.
+type: dataset
+authors:
+  - alias: nattobbm
+    website: https://github.com/nattobbm
+repository-code: https://github.com/nattobbm/gold-es
+url: https://github.com/nattobbm/gold-es/blob/main/results.md
+abstract: >-
+  A preregistered, fully reproducible study of a recurring intraday volume
+  surge in the 10:15-10:30 ET window across four CME futures contracts
+  (ES, MES, GC, MGC). The specification and analysis script were publicly
+  frozen on 2026-07-23, before the confirmatory sample existed, and their
+  SHA256 hashes were committed to the Bitcoin blockchain on 2026-08-03
+  (block 960824). The confirmatory sample of 30 qualifying trading days
+  closed 2026-08-25; the frozen test was run once on 2026-08-30. Both
+  preregistered hypotheses were confirmed out of sample: the 10:15-10:30
+  bucket volume z-score exceeds zero in all four contracts, and micro
+  contracts show a higher z-score than their full-size counterparts.
+  Effect sizes attenuated relative to the exploratory sample, as expected
+  given the declared post-hoc bucket selection. The mechanism is unresolved.
+keywords:
+  - preregistration
+  - reproducible research
+  - market microstructure
+  - intraday volume seasonality
+  - futures
+  - CME
+  - open science
+license-url: https://github.com/nattobbm/gold-es/blob/main/LICENSE
+date-released: '2026-08-30'
+version: '1.0'
+identifiers:
+  - type: other
+    value: 'git commit 9a59771'
+    description: >-
+      Preregistration commit, 2026-07-23, predating the confirmatory sample.
+  - type: other
+    value: 'Bitcoin block 960824'
+    description: >-
+      Block mined 2026-08-03 05:05:26 UTC containing the OpenTimestamps
+      attestation of the frozen files' SHA256 hashes.
