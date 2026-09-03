@@ -10,7 +10,7 @@ A preregistered, fully reproducible study of a recurring intraday volume surge i
 - **2026-07-23** — specification, analysis script, and raw data committed here, frozen. See `preregistration.md` for the exact hypotheses, sample definition, and decision rules.
 - **2026-08-03** — SHA256 of the frozen files committed to the Bitcoin blockchain (see below). Robustness checks and a power analysis added, both using exploratory data only.
 - **2026-07-15 → 2026-08-25** — confirmatory sample accrued (30 qualifying trading days). Raw data archived without being analyzed.
-- **2026-08-30** — `analysis_frozen.py` run once, unmodified, after verifying it is byte-identical to the preregistered version and matches its blockchain-attested hash.
+- **2026-08-31, 00:26 ET** — `analysis_frozen.py` run once, unmodified, after verifying it is byte-identical to the preregistered version and matches its blockchain-attested hash. (Prepared the previous evening; the run crossed midnight. See the dating note in `results.md`.)
 
 ### Result
 
@@ -29,13 +29,13 @@ Two caveats stated up front, not buried: all four H1 effects **attenuated** out 
 
 **The result**
 - `results.md` — full confirmatory report: verbatim script output, decisions against the preregistered criteria, exploratory-vs-confirmatory comparison, the marginal finding stated as marginal, protocol deviations, limitations, mechanism discussion.
-- `results_stdout_2026-08-30.txt` — raw stdout of the single frozen run.
+- `results_stdout_2026-08-30.txt` — raw stdout of the single frozen run (filename carries the preparation date; the run itself was 2026-08-31 00:26 ET).
 - `robustness_exploratory.md` — multiplicity correction (Bonferroni ×26 and ×104), split-half stability, weekday decomposition, holiday sensitivity, and the power analysis. All computed on exploratory data only, all committed before the confirmatory sample closed.
 
 **Data**
 - `*_1m.csv`, `*_5m.csv` (repo root) — raw exploratory-sample data, 2026-05-04 → 2026-07-14.
 - `archive/pull_YYYY-MM-DD/` — dated raw pulls. Those dated on or before 2026-08-25 were made during the confirmatory period and were archived without being analyzed; later pulls are ordinary post-study collection.
-- `data/{SYM}.csv` — the exact inputs fed to the frozen script on 2026-08-30 (staged from `archive/pull_2026-08-30/`; column `time` renamed to `datetime`, nothing else changed).
+- `data/{SYM}.csv` — the exact inputs fed to the frozen script (staged from `archive/pull_2026-08-30/`; column `time` renamed to `datetime`, nothing else changed).
 
 **Tooling** (`tools/`) — `weekly_archive.py` (scheduled data pulls), `sample_readiness_check.py` (bar-count-only completeness check), `stage_for_scoring.py` (file placement), `robustness_exploratory.py`, `power_analysis.py`, `confirmatory_descriptives.py`.
 
@@ -49,9 +49,9 @@ These figures were the *hypothesis-generating* sample and were never treated as 
 
 ## Why the commit history matters
 
-The point of this repo is the timeline: the specification was publicly frozen **before** the confirmatory data existed, let alone was examined. That commitment is now discharged — the sample closed on 2026-08-25, the frozen script was run once on 2026-08-30, and the result was published as-is. The history has not been rewritten and will not be.
+The point of this repo is the timeline: the specification was publicly frozen **before** the confirmatory data existed, let alone was examined. That commitment is now discharged — the sample closed on 2026-08-25, the frozen script was run once just after midnight on 2026-08-31, and the result was published as-is. The history has not been rewritten and will not be.
 
-The order of events is checkable by anyone: preregistration commit `9a59771` (2026-07-23) → blockchain attestation of its hash (2026-08-03) → dated archive commits through the confirmatory window → `results.md` (2026-08-30).
+The order of events is checkable by anyone: preregistration commit `9a59771` (2026-07-23) → blockchain attestation of its hash (2026-08-03) → dated archive commits through the confirmatory window → `results.md` (2026-08-31).
 
 ## License and citation
 

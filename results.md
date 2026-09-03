@@ -1,6 +1,6 @@
 # Confirmatory Results — the 10:15–10:30 ET Intraday Volume Anomaly
 
-**Analysis run:** 2026-08-30
+**Analysis run:** 2026-08-31, 00:26:02 ET (see the note on dating below)
 **Confirmatory sample:** 30 qualifying trading days, 2026-07-15 → 2026-08-25 (identical dates for all four instruments; the 30th qualifying day fell on 2026-08-25, matching the date projected in the preregistration)
 **Script:** `analysis_frozen.py`, run once, unmodified
 **Outcome: H1 CONFIRMED (4/4). H2 CONFIRMED (2/2).**
@@ -36,6 +36,8 @@ H2 overall: CONFIRMED (2/2 passed)
 ```
 
 Full stdout is preserved in `results_stdout_2026-08-30.txt`.
+
+**Note on dating.** The run was prepared on the evening of 2026-08-30 and executed at **00:26:02 ET on 2026-08-31**, having crossed midnight during preparation. The stdout filename retains `2026-08-30` and is left unchanged rather than renamed after the fact. The run is bracketed in the public commit history by `c2c209f` (2026-08-30 23:33 ET, staging scripts, before the run) and `ccb7083` (2026-08-31 01:56 ET, these results, after it). Nothing in the protocol depends on which side of midnight the run fell — the sample had closed on 2026-08-25 either way — but the precise timestamp is stated here rather than rounded, because the value of this study rests on its dates being checkable.
 
 ## 3. Decisions against the preregistered criteria
 

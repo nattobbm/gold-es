@@ -18,7 +18,7 @@ abstract: >-
   frozen on 2026-07-23, before the confirmatory sample existed, and their
   SHA256 hashes were committed to the Bitcoin blockchain on 2026-08-03
   (block 960824). The confirmatory sample of 30 qualifying trading days
-  closed 2026-08-25; the frozen test was run once on 2026-08-30. Both
+  closed 2026-08-25; the frozen test was run once on 2026-08-31. Both
   preregistered hypotheses were confirmed out of sample: the 10:15-10:30
   bucket volume z-score exceeds zero in all four contracts, and micro
   contracts show a higher z-score than their full-size counterparts.
@@ -33,7 +33,7 @@ keywords:
   - CME
   - open science
 license-url: https://github.com/nattobbm/gold-es/blob/main/LICENSE
-date-released: '2026-08-30'
+date-released: '2026-08-31'
 version: '1.0'
 identifiers:
   - type: other
