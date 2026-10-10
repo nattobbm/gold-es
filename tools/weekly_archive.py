@@ -39,10 +39,20 @@ JOBS = [
     ("MES", "MES=F", "5m", "60d"),
     ("GC",  "GC=F",  "5m", "60d"),
     ("MGC", "MGC=F", "5m", "60d"),
+    # Added 2026-10-09. NQ/MNQ were never in the preregistration and are not
+    # part of the frozen test; they are collected because the 2026-10-09
+    # extension found the same 10:15-10:30 pattern in them, and because
+    # yfinance's ~60-day 5m lookback means every uncollected day is lost
+    # permanently (that gap is why the extension could not use the study's
+    # own 2026-07-15 window).
+    ("NQ",  "NQ=F",  "5m", "60d"),
+    ("MNQ", "MNQ=F", "5m", "60d"),
     ("ES",  "ES=F",  "1m", "8d"),
     ("MES", "MES=F", "1m", "8d"),
     ("GC",  "GC=F",  "1m", "8d"),
     ("MGC", "MGC=F", "1m", "8d"),
+    ("NQ",  "NQ=F",  "1m", "8d"),
+    ("MNQ", "MNQ=F", "1m", "8d"),
 ]
 
 
@@ -73,6 +83,7 @@ def main():
 
     os.makedirs(OUTDIR, exist_ok=True)
     ok_5m = 0
+    n_5m = sum(1 for _, _, iv, _ in JOBS if iv == "5m")
     for name, sym, iv, per in JOBS:
         try:
             df = yf.download(sym, period=per, interval=iv,
@@ -102,8 +113,8 @@ def main():
             f"RERUN MANUALLY.")
         return 1
 
-    if ok_5m < 4:
-        log(f"pull_{TODAY} WARNING: only {ok_5m}/4 5m files pulled - "
+    if ok_5m < n_5m:
+        log(f"pull_{TODAY} WARNING: only {ok_5m}/{n_5m} 5m files pulled - "
             f"committing partial archive, RERUN MANUALLY for the rest.")
 
     if datetime.date.today() <= CONFIRMATORY_END:
@@ -121,7 +132,7 @@ def main():
         return 1
 
     log(f"pull_{TODAY} archived, committed and pushed "
-        f"({ok_5m}/4 5m files complete)")
+        f"({ok_5m}/{n_5m} 5m files complete)")
     return 0
 
 
